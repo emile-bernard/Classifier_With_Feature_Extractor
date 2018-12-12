@@ -92,6 +92,13 @@ button {
   align-items: center;
 }
 
+#videoSaveAndLoadContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 #home-page-wrapper {
   display: flex;
   width: 100%;

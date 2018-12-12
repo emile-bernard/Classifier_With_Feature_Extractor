@@ -12,10 +12,12 @@ Image Classification using Feature Extractor with MobileNet
 let video = document.getElementById('video');
 let videoStatus = document.getElementById('videoStatus');
 let loading = document.getElementById('loading');
-let catButton = document.getElementById('aButton');
-let dogButton = document.getElementById('bButton');
-let amountOfCatImages = document.getElementById('amountOfAImages');
-let amountOfDogImages = document.getElementById('amountOfBImages');
+let aButton = document.getElementById('aButton');
+let bButton = document.getElementById('bButton');
+let saveButton = document.getElementById('saveButton');
+let loadButton = document.getElementById('loadButton');
+let amountOfAImages = document.getElementById('amountOfAImages');
+let amountOfBImages = document.getElementById('amountOfBImages');
 let train = document.getElementById('train');
 let loss = document.getElementById('loss');
 let result = document.getElementById('result');
@@ -52,22 +54,22 @@ function videoReady() {
     videoStatus.innerText = 'Video ready!';
 }
 
-// When the Cat button is pressed, add the current frame
-// from the video with a label of cat to the classifier
-catButton.onclick = function () {
+// When the A button is pressed, add the current frame
+// from the video with a label of a to the classifier
+aButton.onclick = function () {
     classifier.addImage('A');
-    amountOfCatImages.innerText = Number(amountOfCatImages.innerText) + 1;
+    amountOfAImages.innerText = Number(amountOfAImages.innerText) + 1;
 };
 
-// When the Cat button is pressed, add the current frame
-// from the video with a label of cat to the classifier
-dogButton.onclick = function () {
+// When the B button is pressed, add the current frame
+// from the video with a label of b to the classifier
+bButton.onclick = function () {
     classifier.addImage('B');
-    amountOfDogImages.innerText = Number(amountOfDogImages.innerText) + 1;
+    amountOfBImages.innerText = Number(amountOfBImages.innerText) + 1;
 };
 
 // When the train button is pressed, train the classifier
-// With all the given cat and dog images
+// With all the given a and b images
 train.onclick = function () {
     classifier.train(function(lossValue) {
         if (lossValue) {
@@ -77,6 +79,14 @@ train.onclick = function () {
             loss.innerHTML = 'Done Training! Final Loss: ' + totalLoss;
         }
     });
+};
+
+saveButton.onclick = function () {
+    classifier.save();
+};
+
+loadButton.onclick = function () {
+    classifier.load('./SavedModel/model.json');
 };
 
 // Show the results
