@@ -78,6 +78,13 @@ button {
   align-items: center;
 }
 
+#videoCustomChoicesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 #videoTrainContainer {
   display: flex;
   flex-direction: row;

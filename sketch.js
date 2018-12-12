@@ -14,10 +14,15 @@ let videoStatus = document.getElementById('videoStatus');
 let loading = document.getElementById('loading');
 let aButton = document.getElementById('aButton');
 let bButton = document.getElementById('bButton');
+let customButton = document.getElementById('customButton');
+let customInput = document.getElementById('customInput');
+
 let saveButton = document.getElementById('saveButton');
 let loadButton = document.getElementById('loadButton');
 let amountOfAImages = document.getElementById('amountOfAImages');
 let amountOfBImages = document.getElementById('amountOfBImages');
+let amountOfCustomImages = document.getElementById('amountOfCustomImages');
+
 let train = document.getElementById('train');
 let loss = document.getElementById('loss');
 let result = document.getElementById('result');
@@ -66,6 +71,12 @@ aButton.onclick = function () {
 bButton.onclick = function () {
     classifier.addImage('B');
     amountOfBImages.innerText = Number(amountOfBImages.innerText) + 1;
+};
+
+customButton.onclick = function () {
+    let customImageName = customInput.value;
+    classifier.addImage(customImageName.toString());
+    amountOfCustomImages.innerText = Number(amountOfCustomImages.innerText) + 1;
 };
 
 // When the train button is pressed, train the classifier
