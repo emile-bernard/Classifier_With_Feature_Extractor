@@ -5,3 +5,4 @@ Image classification using Feature Extraction over MobileNet. Allows you to trai
 
 ## Links
 [FeatureExtractor_Image_Classification](https://github.com/ml5js/ml5-examples/tree/master/javascript/FeatureExtractor_Image_Classification)
+[Load/Save Model Tutorial](https://youtu.be/eU7gIy3xV30)
