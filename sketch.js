@@ -106,6 +106,7 @@ function gotResults(err, data) {
     if (err) {
         console.error(err);
     }
+
     result.innerText = data;
     classifier.classify(gotResults);
 }
