@@ -4,7 +4,7 @@
 Image classification using Feature Extraction over MobileNet. Allows you to train a neural network to distinguish between two different set of custom images.
 
 ## Previews
-
+![Capture1](docs/preview/Capture1.PNG?raw=true "Capture1")     
 
 ## Saving a trained model
 Once you trained your model you can press the Save button.
